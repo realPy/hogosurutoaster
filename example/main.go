@@ -57,12 +57,23 @@ func (w *GlobalContainer) OnLoad(d document.Document, n node.Node, route string)
 		o.SetValue("info")
 		s.AppendChild(o.Node)
 
+		o, _ = htmloptionelement.New(d)
+		o.SetTextContent("custom")
+		o.SetValue("home")
+		s.AppendChild(o.Node)
+
 		input.SetType("text")
 		testButton.OnClick(func(e event.Event) {
 
 			iValue, _ := input.Value()
 			sValue, _ := s.Value()
-			w.toaster.AddMessage(iValue, sValue)
+
+			if sValue == "home" {
+				w.toaster.CustomMessage(iValue, "green", "white", "red", "home", "blue")
+
+			} else {
+				w.toaster.AddMessage(iValue, sValue)
+			}
 
 		})
 

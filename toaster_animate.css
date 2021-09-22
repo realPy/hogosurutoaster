@@ -1,0 +1,30 @@
+.hogosurutoastershow {
+	visibility: visible;
+	-webkit-animation: slide 0.5s, fadeout 0.5s 3.5s;
+	animation: slide 0.5s, fadeout 0.5s 3.5s;
+  }
+  
+
+  @-webkit-keyframes slide {
+	from {right: -300px;} 
+	to {right: 0px;}
+  }
+
+  @keyframes slide {
+	from {right: -300px;} 
+	to {right: 0px;}
+  }
+  @keyframes fadeout {
+	from { opacity: 1;}
+	to { opacity: 0;}
+  }
+
+  @-webkit-keyframes fadeout {
+	from {opacity: 1;} 
+	to {opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+	from { opacity: 1;}
+	to { opacity: 0;}
+  }

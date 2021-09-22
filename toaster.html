@@ -1,10 +1,11 @@
 <html>  
     <head>
         <meta charset="utf-8"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     </head>
     <style>
 
-#toasters {
+#hogosuru-toasters {
     position: fixed;
     right: 0px;
     top: 0px;
@@ -25,11 +26,12 @@
     color: black;
     text-align: center;
     border-radius: 4px;
-    padding: 20;
     font-size: 13px;
     margin: 2px;
     position: relative;
     right: -0px;
+    display: flex;
+    align-items: center;
 }
 
 .hogosurutoaster-error {
@@ -53,15 +55,32 @@
     color: #e68e1f;
 }
 
+.hogosurutoaster-text {
+  color:black;
+  max-width: 15em;
+  padding: 1em;
+  text-align: left;
+}
+
+.hogosurutoaster-icon {
+  font-size:16px;
+  padding: 0.5em;
+}
 
   </style>
     <body>
-      <div id="toasters">
-        <div class="hogosurutoaster , hogosurutoaster-">default</div>
-        <div class="hogosurutoaster , hogosurutoaster-info">Info</div>
-        <div class="hogosurutoaster , hogosurutoaster-ok">Ok</div>
-        <div class="hogosurutoaster , hogosurutoaster-warn">Warn</div>
-        <div class="hogosurutoaster , hogosurutoaster-error">Error</div>
+      <div id="hogosuru-toasters">
+        <div class="hogosurutoaster , hogosurutoaster-"><i class="material-icons , hogosurutoaster-icon" ></i><div class="hogosurutoaster-text">default</div></div>
+        <div class="hogosurutoaster , hogosurutoaster-info"><i class="material-icons , hogosurutoaster-icon" style="color: blue;">info</i><div class="hogosurutoaster-text">Info</div></div>
+        <div class="hogosurutoaster , hogosurutoaster-ok"><i class="material-icons , hogosurutoaster-icon" style="color:green;">done</i><div class="hogosurutoaster-text">Ok</div></div>
+        <div class="hogosurutoaster , hogosurutoaster-warn"><i class="material-icons , hogosurutoaster-icon" style="color:orange;">warning</i><div class="hogosurutoaster-text">Warn</div></div>
+        <div class="hogosurutoaster , hogosurutoaster-error"><i class="material-icons , hogosurutoaster-icon" style="color:red;">error</i><div class="hogosurutoaster-text">Error</div></div>
+
+<div class="hogosurutoaster , hogosurutoaster-error" style="
+display: flex;
+align-items: center;
+"><i class="material-icons" style="font-size:16px;color:red;padding: 0.5em;">dangerous</i><div class="hogosurutoaster-text" style="max-width: 15em;padding: 1em;text-align: left;">Erreur dans l'utilisation des services windows qslkk sqlsk qslk sqlks </div></div>
+  </div>
       </div>
     </body>
  </html
