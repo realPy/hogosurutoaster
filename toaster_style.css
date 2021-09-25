@@ -1,3 +1,4 @@
+
 #hogosuru-toasters {
     position: fixed;
     right: 0px;
@@ -6,8 +7,16 @@
     z-index: 1;
     flex-direction: column-reverse;
     padding: 4px;
+}
 
+.hogosuru-toasters-top-right {
+    right: 0px;
+    top: 0px;
+}
 
+.hogosuru-toasters-top-left {
+    left: 0px;
+    top: 0px;
 }
 
 

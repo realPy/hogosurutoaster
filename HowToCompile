@@ -13,3 +13,9 @@ curl https://raw.githubusercontent.com/realPy/hogosuru/main/hogosuru/hogosuru.go
 GOOS=js GOARCH=wasm go get github.com/realPy/hogosuru
 
 tinygo build  --no-debug -target wasm  -o example/dist/toaster.wasm example/main.go
+
+
+document.dispatchEvent(new CustomEvent("hogosurutoaster-notify",{detail: {type: "warn",message:"Hello World!!!!!"}}))
+
+document.dispatchEvent(new CustomEvent("hogosurutoaster-customnotify",{detail: {message:"Hello World!",fontColor:"white",backgroundColor:"Black",borderColor:"black",materialDesignIcon:"warning",materialDesignIconColor:"yellow"}}))
+

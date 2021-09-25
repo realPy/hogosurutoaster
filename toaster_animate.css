@@ -1,19 +1,39 @@
-.hogosurutoastershow {
+.hogosurutoastershow-top-right {
 	visibility: visible;
-	-webkit-animation: slide 0.5s, fadeout 0.5s 3.5s;
-	animation: slide 0.5s, fadeout 0.5s 3.5s;
+	-webkit-animation: slide-top-right 0.5s, fadeout 0.5s 3.5s;
+	animation: slide-top-right 0.5s, fadeout 0.5s 3.5s;
   }
   
 
-  @-webkit-keyframes slide {
+  @-webkit-keyframes slide-top-right {
 	from {right: -300px;} 
 	to {right: 0px;}
   }
 
-  @keyframes slide {
+  @keyframes slide-top-right {
 	from {right: -300px;} 
 	to {right: 0px;}
   }
+
+
+  .hogosurutoastershow-top-left {
+	visibility: visible;
+	-webkit-animation: slide-top-left 0.5s, fadeout 0.5s 3.5s;
+	animation: slide-top-left 0.5s, fadeout 0.5s 3.5s;
+  }
+  
+
+  @-webkit-keyframes slide-top-left {
+	from {left: -300px;} 
+	to {left: 0px;}
+  }
+
+  @keyframes slide-top-left {
+	from {left: -300px;} 
+	to {left: 0px;}
+  }
+
+
   @keyframes fadeout {
 	from { opacity: 1;}
 	to { opacity: 0;}

@@ -5,11 +5,15 @@ import (
 
 	"github.com/realPy/hogosuru"
 	"github.com/realPy/hogosuru/animationevent"
+	"github.com/realPy/hogosuru/baseobject"
+	"github.com/realPy/hogosuru/customevent"
 	"github.com/realPy/hogosuru/document"
+	"github.com/realPy/hogosuru/event"
 	"github.com/realPy/hogosuru/htmldivelement"
 	"github.com/realPy/hogosuru/htmllinkelement"
 	"github.com/realPy/hogosuru/htmlstyleelement"
 	"github.com/realPy/hogosuru/node"
+	"github.com/realPy/hogosuru/object"
 	"github.com/realPy/hogosuru/promise"
 )
 
@@ -34,9 +38,14 @@ func (t *Toaster) OnLoad(d document.Document, n node.Node, route string) (*promi
 
 	if t.container.Empty() {
 
+		customevent.GetInterface()
+		object.GetInterface()
+
 		if t.container, err = htmldivelement.New(d); hogosuru.AssertErr(err) {
 			t.container.SetID("hogosuru-toasters")
+			t.container.SetClassName("hogosuru-toasters-top-right")
 			if head, err := d.Head(); hogosuru.AssertErr(err) {
+
 				if link, err := htmllinkelement.New(d); hogosuru.AssertErr(err) {
 
 					link.SetRel("stylesheet")
@@ -48,6 +57,55 @@ func (t *Toaster) OnLoad(d document.Document, n node.Node, route string) (*promi
 
 					style.SetTextContent(css)
 					head.AppendChild(style.Node)
+
+				}
+
+				if d, err := document.New(); hogosuru.AssertErr(err) {
+
+					d.AddEventListener("hogosurutoaster-notify", func(e event.Event) {
+
+						if obj, err := baseobject.Discover(e.JSObject()); err == nil {
+							if c, ok := obj.(customevent.CustomEventFrom); ok {
+								if detail, err := c.CustomEvent().Detail(); hogosuru.AssertErr(err) {
+									if objdetail, ok := detail.(object.Object); ok {
+
+										if mapObject, err := objdetail.Map(); hogosuru.AssertErr(err) {
+
+											if mapObject.Has_("type") {
+												t.AddMessage(mapObject.Get_("message").(string), mapObject.Get_("type").(string))
+											}
+										}
+
+									}
+
+								}
+
+							}
+						}
+
+					})
+					d.AddEventListener("hogosurutoaster-customnotify", func(e event.Event) {
+
+						if obj, err := baseobject.Discover(e.JSObject()); err == nil {
+							if c, ok := obj.(customevent.CustomEventFrom); ok {
+								if detail, err := c.CustomEvent().Detail(); hogosuru.AssertErr(err) {
+									if objdetail, ok := detail.(object.Object); ok {
+
+										if mapObject, err := objdetail.Map(); hogosuru.AssertErr(err) {
+
+											if mapObject.Has_("fontColor") && mapObject.Has_("backgroundColor") && mapObject.Has_("borderColor") && mapObject.Has_("materialDesignIcon") && mapObject.Has_("materialDesignIconColor") {
+												t.CustomMessage(mapObject.Get_("message").(string), mapObject.Get_("fontColor").(string), mapObject.Get_("backgroundColor").(string), mapObject.Get_("borderColor").(string), mapObject.Get_("materialDesignIcon").(string), mapObject.Get_("materialDesignIconColor").(string))
+											}
+										}
+
+									}
+
+								}
+
+							}
+						}
+
+					})
 
 				}
 
@@ -81,7 +139,7 @@ func (t Toaster) message(messageToaster string, fontColor, backgroundColor, bord
 				divtext.SetTextContent(messageToaster)
 			}
 
-			classToaster.WriteString("hogosurutoaster hogosurutoastershow")
+			classToaster.WriteString("hogosurutoaster hogosurutoastershow-top-right")
 
 			if toasterClass != "" {
 				classToaster.WriteString(" hogosurutoaster-")
@@ -137,6 +195,7 @@ func (t *Toaster) OnEndChildRendering(r hogosuru.Rendering) {
 
 func (t *Toaster) OnEndChildsRendering(tree node.Node) {
 	t.parentNode.AppendChild(t.container.Node)
+
 }
 
 func (t *Toaster) Node() node.Node {
