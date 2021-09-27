@@ -25,11 +25,19 @@ const (
 	ToasterCustom = ""
 )
 
+const (
+	FROMTOPRIGHT = iota
+	FROMTOPLEFT
+	FROMBOTTOMRIGHT
+	FROMBOTTOMLEFT
+)
+
 //go:generate go run cmd/csscompact.go hogosurutoaster
 
 type Toaster struct {
-	parentNode node.Node
-	container  htmldivelement.HtmlDivElement
+	parentNode      node.Node
+	container       htmldivelement.HtmlDivElement
+	ToasterPosition int
 }
 
 func (t *Toaster) OnLoad(d document.Document, n node.Node, route string) (*promise.Promise, []hogosuru.Rendering) {
@@ -43,7 +51,20 @@ func (t *Toaster) OnLoad(d document.Document, n node.Node, route string) (*promi
 
 		if t.container, err = htmldivelement.New(d); hogosuru.AssertErr(err) {
 			t.container.SetID("hogosuru-toasters")
-			t.container.SetClassName("hogosuru-toasters-top-right")
+
+			switch t.ToasterPosition {
+			case FROMTOPRIGHT:
+				t.container.SetClassName("hogosuru-toasters-top-right")
+			case FROMTOPLEFT:
+				t.container.SetClassName("hogosuru-toasters-top-left")
+			case FROMBOTTOMRIGHT:
+				t.container.SetClassName("hogosuru-toasters-bottom-right")
+			case FROMBOTTOMLEFT:
+				t.container.SetClassName("hogosuru-toasters-bottom-left")
+			default:
+				t.container.SetClassName("hogosuru-toasters-top-right")
+			}
+
 			if head, err := d.Head(); hogosuru.AssertErr(err) {
 
 				if link, err := htmllinkelement.New(d); hogosuru.AssertErr(err) {
@@ -139,7 +160,14 @@ func (t Toaster) message(messageToaster string, fontColor, backgroundColor, bord
 				divtext.SetTextContent(messageToaster)
 			}
 
-			classToaster.WriteString("hogosurutoaster hogosurutoastershow-top-right")
+			switch t.ToasterPosition {
+			case FROMTOPRIGHT, FROMBOTTOMRIGHT:
+				classToaster.WriteString("hogosurutoaster hogosurutoastershow-right")
+			case FROMTOPLEFT, FROMBOTTOMLEFT:
+				classToaster.WriteString("hogosurutoaster hogosurutoastershow-left")
+			default:
+				classToaster.WriteString("hogosurutoaster hogosurutoastershow-right")
+			}
 
 			if toasterClass != "" {
 				classToaster.WriteString(" hogosurutoaster-")

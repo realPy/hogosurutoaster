@@ -63,6 +63,7 @@ func (w *GlobalContainer) OnLoad(d document.Document, n node.Node, route string)
 		s.AppendChild(o.Node)
 
 		input.SetType("text")
+		w.toaster.ToasterPosition = hogosurutoaster.FROMTOPRIGHT
 		testButton.OnClick(func(e event.Event) {
 
 			iValue, _ := input.Value()

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>  
     <head>
         <meta charset="utf-8"/>
@@ -6,19 +7,68 @@
     <style>
 
 
+.hogosurutoastershow {
+	visibility: visible;
+	-webkit-animation: slide 0.5s, fadeout 0.5s 3.5s;
+	animation: slide 0.5s, fadeout 0.5s 3.5s;
+  }
+  
 
-#hogosuru-toasters {
+  @-webkit-keyframes slide {
+	from {right: -300px;} 
+	to {right: 0px;}
+  }
+
+  @keyframes slide {
+	from {right: -300px;} 
+	to {right: 0px;}
+  }
+  @keyframes fadeout {
+	from { opacity: 1;}
+	to { opacity: 0;}
+  }
+
+  @-webkit-keyframes fadeout {
+	from {opacity: 1;} 
+	to {opacity: 0;}
+  }
+  
+  @keyframes fadeout {
+	from { opacity: 1;}
+	to { opacity: 0;}
+  }
+
+
+  #hogosuru-toasters {
     position: fixed;
-    right: 0px;
-    top: 0px;
     display: flex;
     z-index: 1;
-    flex-direction: column-reverse;
     padding: 4px;
-
-
 }
 
+.hogosuru-toasters-top-right {
+    right: 0px;
+    top: 0px;
+    flex-direction: column-reverse;
+}
+
+.hogosuru-toasters-top-left {
+    left: 0px;
+    top: 0px;
+    flex-direction: column-reverse;
+}
+
+.hogosuru-toasters-bottom-left {
+    left: 0px;
+    bottom: 0px;
+    flex-direction: column;
+}
+
+.hogosuru-toasters-bottom-right {
+    right: 0px;
+    bottom: 0px;
+    flex-direction: column;
+}
 
 .hogosurutoaster{
     /* visibility: hidden; */
@@ -31,7 +81,7 @@
     font-size: 13px;
     margin: 2px;
     position: relative;
-    right: -300px;
+    right: 0px;
     display: flex;
     align-items: center;
 }
@@ -59,7 +109,6 @@
 
 .hogosurutoaster-text {
   color:black;
-  max-width: 15em;
   padding: 1em;
   text-align: left;
 }
@@ -71,7 +120,7 @@
 
   </style>
     <body>
-      <div id="hogosuru-toasters">
+      <div id="hogosuru-toasters" class="hogosuru-toasters-bottom-right">
         <div class="hogosurutoaster , hogosurutoaster-"><i class="material-icons , hogosurutoaster-icon" ></i><div class="hogosurutoaster-text">default</div></div>
         <div class="hogosurutoaster , hogosurutoaster-info"><i class="material-icons , hogosurutoaster-icon" style="color: blue;">info</i><div class="hogosurutoaster-text">Info</div></div>
         <div class="hogosurutoaster , hogosurutoaster-ok"><i class="material-icons , hogosurutoaster-icon" style="color:green;">done</i><div class="hogosurutoaster-text">Ok</div></div>
@@ -81,8 +130,16 @@
 <div class="hogosurutoaster , hogosurutoaster-error" style="
 display: flex;
 align-items: center;
-"><i class="material-icons" style="font-size:16px;color:red;padding: 0.5em;">dangerous</i><div class="hogosurutoaster-text" style="max-width: 15em;padding: 1em;text-align: left;">Erreur dans l'utilisation des services windows qslkk sqlsk qslk sqlks </div></div>
+"><i class="material-icons" style="font-size:16px;color:red;padding: 0.5em;">dangerous</i><div class="hogosurutoaster-text" >Erreur dans l'utilisation des services windows qslkk sqlsk qslk sqlks </div></div>
   </div>
       </div>
+      <img src="https://cdn.futura-sciences.com/buildsv6/images/mediumoriginal/6/5/2/652a7adb1b_98148_01-intro-773.jpg"><br>
+      <img src="https://cdn.futura-sciences.com/buildsv6/images/mediumoriginal/6/5/2/652a7adb1b_98148_01-intro-773.jpg"><br>
+      <img src="https://cdn.futura-sciences.com/buildsv6/images/mediumoriginal/6/5/2/652a7adb1b_98148_01-intro-773.jpg"><br>
+
+      <img src="https://cdn.futura-sciences.com/buildsv6/images/mediumoriginal/6/5/2/652a7adb1b_98148_01-intro-773.jpg"><br>
+      <img src="https://cdn.futura-sciences.com/buildsv6/images/mediumoriginal/6/5/2/652a7adb1b_98148_01-intro-773.jpg"><br>
+      <img src="https://cdn.futura-sciences.com/buildsv6/images/mediumoriginal/6/5/2/652a7adb1b_98148_01-intro-773.jpg"><br>
+
     </body>
  </html

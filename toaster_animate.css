@@ -1,36 +1,72 @@
-.hogosurutoastershow-top-right {
+.hogosurutoastershow-right {
 	visibility: visible;
-	-webkit-animation: slide-top-right 0.5s, fadeout 0.5s 3.5s;
-	animation: slide-top-right 0.5s, fadeout 0.5s 3.5s;
+	-webkit-animation: slide-right 0.5s, fadeout 0.5s 3.5s;
+	animation: slide-right 0.5s, fadeout 0.5s 3.5s;
   }
   
 
-  @-webkit-keyframes slide-top-right {
+  @-webkit-keyframes slide-right {
 	from {right: -300px;} 
 	to {right: 0px;}
   }
 
-  @keyframes slide-top-right {
+  @keyframes slide-right {
 	from {right: -300px;} 
 	to {right: 0px;}
   }
 
 
-  .hogosurutoastershow-top-left {
+  .hogosurutoastershow-left {
 	visibility: visible;
-	-webkit-animation: slide-top-left 0.5s, fadeout 0.5s 3.5s;
-	animation: slide-top-left 0.5s, fadeout 0.5s 3.5s;
+	-webkit-animation: slide-left 0.5s, fadeout 0.5s 3.5s;
+	animation: slide-left 0.5s, fadeout 0.5s 3.5s;
   }
   
 
-  @-webkit-keyframes slide-top-left {
+  @-webkit-keyframes slide-left {
 	from {left: -300px;} 
 	to {left: 0px;}
   }
 
-  @keyframes slide-top-left {
+  @keyframes slide-left {
 	from {left: -300px;} 
 	to {left: 0px;}
+  }
+
+
+  .hogosurutoastershow-bottom {
+	visibility: visible;
+	-webkit-animation: slide-bottom 0.5s, fadeout 0.5s 3.5s;
+	animation: slide-bottom 0.5s, fadeout 0.5s 3.5s;
+  }
+  
+
+  @-webkit-keyframes slide-bottom {
+	from {bottom: -30px;} 
+	to {bottom: 0px;}
+  }
+
+  @keyframes slide-bottom {
+	from {bottom: -30px;} 
+	to {bottom: 0px;}
+  }
+
+
+  .hogosurutoastershow-top {
+	visibility: visible;
+	-webkit-animation: slide-top 0.5s, fadeout 0.5s 3.5s;
+	animation: slide-top 0.5s, fadeout 0.5s 3.5s;
+  }
+  
+
+  @-webkit-keyframes slide-top {
+	from {top: -30px;} 
+	to {top: 0px;}
+  }
+
+  @keyframes slide-top {
+	from {top: -30px;} 
+	to {top: 0px;}
   }
 
 
@@ -48,3 +84,7 @@
 	from { opacity: 1;}
 	to { opacity: 0;}
   }
+
+
+
+ 
