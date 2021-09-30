@@ -221,12 +221,12 @@ func (t *Toaster) OnEndChildRendering(r hogosuru.Rendering) {
 
 }
 
-func (t *Toaster) OnEndChildsRendering(tree node.Node) {
+func (t *Toaster) OnEndChildsRendering() {
 	t.parentNode.AppendChild(t.container.Node)
 
 }
 
-func (t *Toaster) Node() node.Node {
+func (t *Toaster) Node(r hogosuru.Rendering) node.Node {
 
 	return t.container.Node
 }

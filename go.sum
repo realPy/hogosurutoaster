@@ -1,3 +1,5 @@
 github.com/gorilla/websocket v1.4.2/go.mod h1:YR8l580nyteQvAITg2hZ9XVh4b55+EU/adAjf1fMHhE=
 github.com/realPy/hogosuru v0.0.0-20210921060355-bd39ef27e1ee h1:quq9pPMrHcJCMNR1VdvZDlRImeuvfYBhFgp6GOFckpo=
 github.com/realPy/hogosuru v0.0.0-20210921060355-bd39ef27e1ee/go.mod h1:AfRJhftAAT8GMt/ryNNNdDOipJk8fA/Q2z+QCsl0yOc=
+github.com/realPy/hogosuru v0.0.0-20210930181125-2c287c712a6e h1:2FDMgvMfB3uPY9+vpmDdGj+WaaU+7cC7MtICp7pgOFg=
+github.com/realPy/hogosuru v0.0.0-20210930181125-2c287c712a6e/go.mod h1:AfRJhftAAT8GMt/ryNNNdDOipJk8fA/Q2z+QCsl0yOc=
