@@ -29,6 +29,7 @@ document.dispatchEvent(new CustomEvent("hogosurutoaster-customnotify",{detail: {
 ```
 
 Go code:
+
 ```
 if d, err := document.New(); hogosuru.AssertErr(err) {
 
@@ -38,7 +39,6 @@ if d, err := document.New(); hogosuru.AssertErr(err) {
 
 }
 
-```
 if d, err := document.New(); hogosuru.AssertErr(err) {
 
 		if e, err := customevent.New("hogosurutoaster-customnotify", map[string]interface{}{"message": "Hello World!!!!!","fontColor":"white","backgroundColor":"Black","borderColor":"black","materialDesignIcon":"warning","materialDesignIconColor":"yellow"}); hogosuru.AssertErr(err) {
