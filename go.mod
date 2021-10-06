@@ -1,4 +1,4 @@
-module hogosurutoaster
+module github.com/realPy/hogosurutoaster
 
 go 1.16
 
