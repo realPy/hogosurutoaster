@@ -29,6 +29,7 @@ document.dispatchEvent(new CustomEvent("hogosurutoaster-customnotify",{detail: {
 ```
 
 Go code:
+
 ```
 if d, err := document.New(); hogosuru.AssertErr(err) {
 
@@ -37,7 +38,6 @@ if d, err := document.New(); hogosuru.AssertErr(err) {
 		}
 
 }
-```
 
 if d, err := document.New(); hogosuru.AssertErr(err) {
 
@@ -46,7 +46,7 @@ if d, err := document.New(); hogosuru.AssertErr(err) {
 		}
 
 }
-
+```
 ## Try github example
 
 https://realpy.github.io/hogosurutoaster/example/dist/index.html
