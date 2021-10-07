@@ -1,7 +1,7 @@
 package main
 
 import (
-	"hogosurutoaster"
+	"github.com/realPy/hogosurutoaster"
 
 	"github.com/realPy/hogosuru"
 	"github.com/realPy/hogosuru/document"
