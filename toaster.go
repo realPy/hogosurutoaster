@@ -2,6 +2,7 @@ package hogosurutoaster
 
 import (
 	"strings"
+	"syscall/js"
 
 	"github.com/realPy/hogosuru"
 	"github.com/realPy/hogosuru/animationevent"
@@ -35,9 +36,11 @@ const (
 //go:generate go run cmd/csscompact.go hogosurutoaster
 
 type Toaster struct {
-	parentNode      node.Node
-	container       htmldivelement.HtmlDivElement
-	ToasterPosition int
+	parentNode        node.Node
+	container         htmldivelement.HtmlDivElement
+	ToasterPosition   int
+	eventNotify       js.Func
+	eventCustomNotify js.Func
 }
 
 func (t *Toaster) OnLoad(d document.Document, n node.Node, route string) (*promise.Promise, []hogosuru.Rendering) {
@@ -83,7 +86,7 @@ func (t *Toaster) OnLoad(d document.Document, n node.Node, route string) (*promi
 
 				if d, err := document.New(); hogosuru.AssertErr(err) {
 
-					d.AddEventListener("hogosurutoaster-notify", func(e event.Event) {
+					t.eventNotify, _ = d.AddEventListener("hogosurutoaster-notify", func(e event.Event) {
 
 						if obj, err := baseobject.Discover(e.JSObject()); err == nil {
 							if c, ok := obj.(customevent.CustomEventFrom); ok {
@@ -105,7 +108,8 @@ func (t *Toaster) OnLoad(d document.Document, n node.Node, route string) (*promi
 						}
 
 					})
-					d.AddEventListener("hogosurutoaster-customnotify", func(e event.Event) {
+
+					t.eventCustomNotify, _ = d.AddEventListener("hogosurutoaster-customnotify", func(e event.Event) {
 
 						if obj, err := baseobject.Discover(e.JSObject()); err == nil {
 							if c, ok := obj.(customevent.CustomEventFrom); ok {
@@ -234,7 +238,10 @@ func (t *Toaster) Node(r hogosuru.Rendering) node.Node {
 func (t *Toaster) OnUnload() {
 
 	p, _ := t.container.ParentNode()
-
+	if d, err := document.New(); hogosuru.AssertErr(err) {
+		d.RemoveEventListener(t.eventNotify, "hogosurutoaster-notify")
+		d.RemoveEventListener(t.eventCustomNotify, "hogosurutoaster-customnotify")
+	}
 	p.RemoveChild(t.container.Node)
 
 }
