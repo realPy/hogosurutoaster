@@ -1,16 +1,9 @@
 
 docker run --rm -it -w /go/src/hogosurutoaster -v "$PWD":/go/src/hogosurutoaster tinygo/tinygo bash
 
-# in container:
-apt-get install -y curl 
 
-# Get the last hogosuru stable syscall 
 
-curl https://raw.githubusercontent.com/realPy/hogosuru/main/hogosuru/hogosuru.go -o /usr/local/go/src/syscall/js/hogosuru.go
-
-# Get the hogosuru framework 
-
-GOOS=js GOARCH=wasm go get github.com/realPy/hogosuru
+GOOS=js GOARCH=wasm go get 
 
 tinygo build  --no-debug -target wasm  -o example/dist/toaster.wasm example/main.go
 

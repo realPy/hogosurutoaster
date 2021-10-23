@@ -6,5 +6,7 @@ github.com/realPy/hogosuru v0.0.0-20211007115047-ccc923c4f8ff h1:2kd3Nw5tnfjYftK
 github.com/realPy/hogosuru v0.0.0-20211007115047-ccc923c4f8ff/go.mod h1:AfRJhftAAT8GMt/ryNNNdDOipJk8fA/Q2z+QCsl0yOc=
 github.com/realPy/hogosuru v0.0.0-20211009092406-3e263c9487d3 h1:ipEWW/7P1MVe6/AlBOi61/eMv2v6s75sq1mDGB8azZ4=
 github.com/realPy/hogosuru v0.0.0-20211009092406-3e263c9487d3/go.mod h1:AfRJhftAAT8GMt/ryNNNdDOipJk8fA/Q2z+QCsl0yOc=
+github.com/realPy/hogosuru v0.0.0-20211023162920-c6447daead58 h1:3vgYP+R5HbrvKWdBksvw1s7sxbNObED9/6fpMB2hjM4=
+github.com/realPy/hogosuru v0.0.0-20211023162920-c6447daead58/go.mod h1:AfRJhftAAT8GMt/ryNNNdDOipJk8fA/Q2z+QCsl0yOc=
 github.com/realPy/hogosuru v1.0.0-rc5.0.20211023094013-8147e79641b8 h1:/c+kdaCfQunLqD2UfrQIdgbYj+XcDPPulDZnyfFhQKo=
 github.com/realPy/hogosuru v1.0.0-rc5.0.20211023094013-8147e79641b8/go.mod h1:AfRJhftAAT8GMt/ryNNNdDOipJk8fA/Q2z+QCsl0yOc=
