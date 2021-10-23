@@ -109,7 +109,7 @@ func (w *GlobalContainer) OnUnload() {
 }
 
 func main() {
-
+	hogosuru.Init()
 	hogosuru.Router().DefaultRendering(&GlobalContainer{})
 	hogosuru.Router().Start(hogosuru.HASHROUTE)
 	ch := make(chan struct{})
