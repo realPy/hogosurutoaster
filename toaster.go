@@ -5,17 +5,18 @@ import (
 	"syscall/js"
 
 	"github.com/realPy/hogosuru"
-	"github.com/realPy/hogosuru/animationevent"
-	"github.com/realPy/hogosuru/baseobject"
-	"github.com/realPy/hogosuru/customevent"
-	"github.com/realPy/hogosuru/document"
-	"github.com/realPy/hogosuru/event"
-	"github.com/realPy/hogosuru/htmldivelement"
-	"github.com/realPy/hogosuru/htmllinkelement"
-	"github.com/realPy/hogosuru/htmlstyleelement"
-	"github.com/realPy/hogosuru/node"
-	"github.com/realPy/hogosuru/object"
-	"github.com/realPy/hogosuru/promise"
+	"github.com/realPy/hogosuru/base/animationevent"
+	"github.com/realPy/hogosuru/base/baseobject"
+	"github.com/realPy/hogosuru/base/customevent"
+	"github.com/realPy/hogosuru/base/document"
+	"github.com/realPy/hogosuru/base/event"
+	"github.com/realPy/hogosuru/base/htmldivelement"
+	"github.com/realPy/hogosuru/base/htmllinkelement"
+	"github.com/realPy/hogosuru/base/htmlstyleelement"
+	"github.com/realPy/hogosuru/base/node"
+	"github.com/realPy/hogosuru/base/object"
+	"github.com/realPy/hogosuru/base/promise"
+	"github.com/realPy/hogosuru/routing"
 )
 
 const (
@@ -43,7 +44,7 @@ type Toaster struct {
 	eventCustomNotify js.Func
 }
 
-func (t *Toaster) OnLoad(d document.Document, n node.Node, route string) (*promise.Promise, []hogosuru.Rendering) {
+func (t *Toaster) OnLoad(d document.Document, n node.Node, route string) (*promise.Promise, []routing.Rendering) {
 	var err error
 	t.parentNode = n
 
@@ -221,7 +222,7 @@ func (t Toaster) SetText(message string) {
 	t.container.SetTextContent(message)
 }
 
-func (t *Toaster) OnEndChildRendering(r hogosuru.Rendering) {
+func (t *Toaster) OnEndChildRendering(r routing.Rendering) {
 
 }
 
@@ -230,7 +231,7 @@ func (t *Toaster) OnEndChildsRendering() {
 
 }
 
-func (t *Toaster) Node(r hogosuru.Rendering) node.Node {
+func (t *Toaster) Node(r routing.Rendering) node.Node {
 
 	return t.container.Node
 }

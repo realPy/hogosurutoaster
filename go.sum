@@ -5,3 +5,5 @@ github.com/realPy/hogosuru v0.0.0-20211023162920-c6447daead58 h1:3vgYP+R5HbrvKWd
 github.com/realPy/hogosuru v0.0.0-20211023162920-c6447daead58/go.mod h1:AfRJhftAAT8GMt/ryNNNdDOipJk8fA/Q2z+QCsl0yOc=
 github.com/realPy/hogosuru v1.0.0-rc5.0.20211023094013-8147e79641b8 h1:/c+kdaCfQunLqD2UfrQIdgbYj+XcDPPulDZnyfFhQKo=
 github.com/realPy/hogosuru v1.0.0-rc5.0.20211023094013-8147e79641b8/go.mod h1:AfRJhftAAT8GMt/ryNNNdDOipJk8fA/Q2z+QCsl0yOc=
+github.com/realPy/hogosuru v1.4.1-0.20230728185626-e70160f0b243 h1:xRTwHI6iUSuBiX/ZtMW/qjb0pEZ04SLeWuGLS2XIiOo=
+github.com/realPy/hogosuru v1.4.1-0.20230728185626-e70160f0b243/go.mod h1:N0uMX+J8lYvWZLjKoCRpAXJMvkvAuwj9p1Qev8rC6QA=
